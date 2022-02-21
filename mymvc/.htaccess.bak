@@ -1,0 +1,64 @@
+RewriteEngine On
+RewriteBase /
+# For https
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+# www to none-www
+RewriteCond %{HTTP_HOST} ^www.websomot.com [NC]
+RewriteRule ^(.*)$ https://websomot.com/$1 [L,R=301]
+# For index file
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteCond %{REQUEST_URI}::$1 ^(/.+)(.+)::\2$
+RewriteRule ^(.*) - [E=BASE:%1]
+RewriteRule ^(.*)$ %{ENV:BASE}index.php [NC,L,QSA]
+
+<IfModule mod_mime.c>
+    AddType application/x-font-ttf ttc ttf
+    AddType font/opentype otf
+    AddType font/woff woff
+    AddType font/woff2 woff2
+</IfModule>
+<IfModule mod_headers.c>
+    <FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff|woff2|php)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+<ifModule mod_deflate.c>
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE font/woff
+AddOutputFilterByType DEFLATE font/woff2
+</ifModule>
+
+<IfModule mod_expires.c>  
+  # Turn on the module.
+  ExpiresActive on
+  # Set the default expiry times.
+  ExpiresDefault "access plus 2 days"
+  ExpiresByType image/jpg "access plus 6 month"
+  ExpiresByType image/svg+xml "access 6 month"
+  ExpiresByType image/gif "access plus 6 month"
+  ExpiresByType image/jpeg "access plus 6 month"
+  ExpiresByType image/png "access plus 6 month"
+  ExpiresByType text/css "access plus 6 month"
+  ExpiresByType text/javascript "access plus 6 month"
+  ExpiresByType application/javascript "access plus 6 month"
+  ExpiresByType application/x-shockwave-flash "access plus 6 month"
+  ExpiresByType image/ico "access plus 6 month"
+  ExpiresByType image/x-icon "access plus 6 month"
+  ExpiresByType text/html "access plus 600 seconds"
+</IfModule>  

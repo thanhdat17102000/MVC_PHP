@@ -1,0 +1,60 @@
+
+/* For main */
+.page-title{
+    margin-bottom: 0px;
+    font-size: 24px;
+    padding: 15px 0px;
+    font-weight: 400;
+    color: #030303;
+    text-transform: uppercase;
+    border-bottom: 1px solid #030303;
+    line-height: 1.5em;
+}
+.product_detail_info {
+    padding: 20px 0px;
+    margin-bottom: 10px;
+}
+.product_detail_info .button-group{
+    line-height: 3em;
+}
+.product_detail_info .product-avata {
+    max-width: 100%;
+    height: 400px;
+    display: block;
+    margin: 0px auto;
+}
+.product_detail_info .product_profile_scrible {
+    font-size: 110%;
+    line-height: 1.5em;
+    color: #333;
+}
+.product_detail_info .product_profile_linktype {
+    border-top: 1px solid #bbb8b8;
+    border-bottom: 1px solid #bbb8b8;
+    padding: 15px 0px;
+    margin: 15px 0px;
+}
+.product_detail_info .product_profile_realprice {
+    color: #26a1dd;
+    font-size: 130%;
+    white-space: nowrap;
+}
+.product_detail_info .product_profile_saleoff {
+    color: #ff6666;
+    font-size: 130%;
+    white-space: nowrap;
+}
+.product_detail_info .product_profile_price {
+    white-space: nowrap;
+    text-decoration: line-through;
+}
+.product_detail_info .product_profile_action_order .button {
+    background-color: #ff7100;
+    border: 1px solid #ff7100;
+    color: #ffffff;
+}
+.product_detail_info .product_profile_action_order .button:hover {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #ff7100;
+}

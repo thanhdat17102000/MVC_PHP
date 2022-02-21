@@ -1,0 +1,17 @@
+.admin-order-list{
+    
+}
+.admin-order-list .header{
+    background-color: #cccccc;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.admin-order-list .content{
+    font-size: 80%;
+}
+.admin-order-list .content .item{
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    border-bottom: 1px solid #cccccc;
+}

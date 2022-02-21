@@ -1,0 +1,73 @@
+#admin-category-add{
+    margin-top: 30px;
+}
+#admin-category-add-status{
+    display: none;
+    margin-bottom: 5px;
+    color: #ffffff;
+    padding: 7.5px 15px;
+    border-radius: 5px;
+    background-color: #009999;
+}
+#admin-category-add-status.error{
+    background-color: #cd2122;
+}
+#admin-category-list{
+    margin-top: 30px;
+}
+#admin-category-list-content{
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+#admin-category-list-content .item{
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    border-bottom: 1px dotted #666666;
+}
+#admin-category-list-content .item:last-child{
+    border-bottom: none;
+}
+#admin-category-list-content .subItems{
+    padding-left: 15px;
+    border-bottom: 1px dotted #666666;
+}
+#admin-category-list-content .subItems:last-child{
+    border-bottom: none;
+}
+#admin-category-list-content .item-edit-btn,
+#admin-category-list-content .item-delete-btn{
+    cursor: pointer;
+}
+#admin-category-list-content .item-edit-btn{
+    color: #2e72ad;
+}
+#admin-category-list-content .item-delete-btn{
+    color: #cd2122;
+}
+
+#admin-category-edit{
+    display: none;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+#admin-category-edit-status{
+    display: none;
+    margin-bottom: 5px;
+    color: #ffffff;
+    padding: 7.5px 15px;
+    border-radius: 5px;
+    background-color: #009999;
+}
+#admin-category-edit-status.error{
+    background-color: #cd2122;
+}
+
+@media (min-width: 768px){
+    #admin-category-add{
+        margin-top: 0;
+    }
+}
